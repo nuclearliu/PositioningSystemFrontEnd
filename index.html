@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>location</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="index_style.css">
+<!--<script src="https://unpkg.com/vue@next"></script>-->
+</head>
+
+<body>
+	<header>
+		<nav class="site-nav">
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="map.html">map</a></li>
+				<li><a href="#">members</a></li>
+				<li><a href="#">docs</a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section class="welcome">
+			<button type="button" onclick="loadId()" class="btn">get id</button>
+			<p id="demo">id</p>
+		</section>
+		<script>
+		function loadId() {
+			console.log("loading...");
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  document.getElementById("demo").innerHTML = this.responseText;
+			}
+		  };
+		  xhttp.open("GET", "http://10.13.49.251:8080/phone/1", true);
+		  xhttp.send();
+		}
+		</script>
+	</main>
+	
+	<footer></footer>
+</body>
+</html>

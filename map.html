@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="map_style.css">
+</head>
+
+<body>
+	<script src="https://webapi.amap.com/maps?v=2.0&key=f4375872dad96d00719a1bc4c01b0215"></script>
+	<header>
+		<div class="logo">
+			<a href="#">室内外融合定位系统</a>
+		</div>
+	  <nav class="site-nav">
+		<ul>
+		  <li><a href="index.html">home</a></li>
+		  <li><a href="map.html">map</a></li>
+		  <li><a href="#">members</a></li>
+		  <li><a href="#">docs</a></li>
+		  <li><a href="#"></a></li>
+		</ul>
+	  </nav>
+	</header>
+	<main>
+	<section id="navsecond">
+		<ul>
+			<li class="currentLink"><a href="#">实时定位</a></li>
+			<li><a href="history.html">历史追踪</a></li>
+			<li><a href="management.html">系统管理</a></li>
+		</ul>
+		<button onclick="putAPin(map, [114.436507,30.51218])">put a pin</button>
+		<button onclick="removeAPin(map)">remove a pin</button>
+	</section>
+	<section class="map_view">
+		<div id="container"></div>
+		<div id="indoors">
+			<img src="./images/fanhui.png" alt="back" onclick="goOutdoors()" style="margin: 1em;" width="5%">
+			<img src="./images/map.jpg" alt="indoor map" width="100%" style="top: 20vh;">
+		</div>
+		<div id="cover"></div>
+		<div class="detail">
+			<div class="detailContent">	
+				<div class = "deviceName"><p>设备</p></div>
+				<div class="getlocation">
+					<table>
+						<tr>
+							<td>用户名</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>当前位置</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>经纬度</td>
+							<td id="Lnglat"></td>
+						</tr>
+					</table>
+<!--					<button onClick="getLatestLocation()">getLocation</button>-->
+					<p id="locationText"></p>
+				</div>
+			</div>
+		</div>
+		
+
+		<script src="map_script.js"></script>
+		<script src="add%20marker%20for%20display.js"></script>
+	</section>
+	</main>
+	<footer></footer>
+</body>
+</html>
